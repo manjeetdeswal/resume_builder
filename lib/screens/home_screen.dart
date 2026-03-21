@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart'; // <-- Added url_launcher
 import 'package:resume_builder/screens/thumbnail_generator_screen.dart';
 import '../providers/resume_provider.dart';
 import 'template_search_screen.dart';
@@ -7,6 +8,14 @@ import 'editor_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  // --- ADDED: Patreon Launcher Method ---
+  Future<void> _launchPatreon() async {
+    final url = Uri.parse('https://www.patreon.com/cw/UnrealComponent');
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      debugPrint('Could not launch Patreon link');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +30,21 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.black,
         actions: [
+          // --- ADDED: Donation Button in the Main Screen AppBar ---
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red[50],
+                foregroundColor: Colors.redAccent,
+                elevation: 0,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              ),
+              icon: const Icon(Icons.favorite, size: 18),
+              label: const Text('Support', style: TextStyle(fontWeight: FontWeight.bold)),
+              onPressed: _launchPatreon,
+            ),
+          ),
           IconButton(
             icon: const Icon(Icons.settings),
             tooltip: 'Settings',
@@ -226,7 +250,7 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             const Divider(),
-        /*    ListTile(
+            /* ListTile(
               leading: const Icon(Icons.photo_camera, color: Colors.purple),
               title: const Text('Generate Thumbnails', style: TextStyle(color: Colors.purple)),
               onTap: () {
