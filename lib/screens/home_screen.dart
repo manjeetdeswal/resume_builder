@@ -261,10 +261,7 @@ class HomeScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.support_agent, color: Colors.orange),
               title: const Text('Support / Feedback'),
-              onTap: () {
-                Navigator.pop(dialogContext);
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Contact: support@jeetstudio.com')));
-              },
+              onTap: _launchPatreon    ,
             ),
           ],
         ),
