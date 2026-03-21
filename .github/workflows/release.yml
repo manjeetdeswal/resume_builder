@@ -1,11 +1,13 @@
 name: Build Cross-Platform Apps
 
-# This tells GitHub to run this script every time you push to the 'main' branch
-# or when you trigger it manually from the Actions tab.
 on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
+
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   # ==========================================
@@ -102,7 +104,6 @@ jobs:
         run: flutter build macos --release
 
       - name: Zip macOS Build
-        # Uses Mac's native ditto command to preserve .app folder structures safely
         run: ditto -c -k --keepParent build/macos/Build/Products/Release/*.app macos-release.zip
 
       - name: Upload macOS Artifact
@@ -111,6 +112,9 @@ jobs:
           name: macOS-App
           path: macos-release.zip
 
+  # ==========================================
+  # 4. BUILD & DEPLOY WEB (GitHub Pages)
+  # ==========================================
   build-web:
     name: Build & Deploy Web
     runs-on: ubuntu-latest
@@ -124,7 +128,6 @@ jobs:
         run: flutter pub get
 
       - name: Build Web App
-        # This fixes the blank white screen permanently!
         run: flutter build web --release --base-href "/resume_builder/"
 
       - name: Deploy to GitHub Pages
