@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-
+# Forces GitHub to use the new Node 24 engine and silences all warnings
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -70,7 +70,48 @@ jobs:
       - name: Build Linux App
         run: flutter build linux --release
 
+      - name: Create Linux Install Script
+        # This dynamically writes the install.sh file directly into the bundle folder!
+        run: |
+          cat << 'EOF' > build/linux/x64/release/bundle/install.sh
+          #!/bin/bash
+          echo " Installing Resume Builder..."
+          
+          APP_NAME="resume_builder"
+          DISPLAY_NAME="Resume Builder"
+          INSTALL_DIR="$HOME/.local/share/ResumeBuilder"
+          DESKTOP_DIR="$HOME/.local/share/applications"
+          EXEC_PATH="$INSTALL_DIR/$APP_NAME"
+          ICON_PATH="$INSTALL_DIR/data/flutter_assets/assets/icon.png"
+
+          rm -rf "$INSTALL_DIR"
+          mkdir -p "$INSTALL_DIR"
+          mkdir -p "$DESKTOP_DIR"
+
+          cp -r ./* "$INSTALL_DIR/"
+          chmod +x "$EXEC_PATH"
+
+          cat <<INNER_EOF > "$DESKTOP_DIR/resume_builder.desktop"
+          [Desktop Entry]
+          Version=1.0
+          Type=Application
+          Name=$DISPLAY_NAME
+          Comment=A cross-platform, offline resume builder
+          Exec=$EXEC_PATH
+          Icon=$ICON_PATH
+          Terminal=false
+          Categories=Office;Utility;
+          INNER_EOF
+
+          chmod +x "$DESKTOP_DIR/resume_builder.desktop"
+          update-desktop-database "$DESKTOP_DIR" &> /dev/null || true
+
+          echo " Installation complete! You can now launch '$DISPLAY_NAME' from your application menu."
+          EOF
+          chmod +x build/linux/x64/release/bundle/install.sh
+
       - name: Zip Linux Build
+        # Now the zip will automatically include your install.sh file!
         run: zip -r linux-release.zip build/linux/x64/release/bundle/*
 
       - name: Upload Android Artifact
