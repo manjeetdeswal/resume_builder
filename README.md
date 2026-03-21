@@ -9,6 +9,11 @@ A beautiful, responsive, and fully offline Resume Builder built with Flutter. De
 
 ✨ **[Try the Live Web Demo Here](https://manjeetdeswal.github.io/resume_builder/)** ✨
 
+                              or
+
+✨ **[Download the app](https://github.com/manjeetdeswal/resume_builder/releases)** ✨
+
+
 ---
 
 ## 📸 Screenshots
@@ -71,9 +76,16 @@ Want to run this project locally or contribute?
 
 ## 📦 Releases & Downloads
 
-Don't want to build it yourself? You can download the latest compiled executables directly from the **[Actions Tab](https://github.com/manjeetdeswal/resume_builder/actions)**.
+Don't want to build it yourself? You can download the latest compiled executables directly from the **[release Tab](https://github.com/manjeetdeswal/resume_builder/releases)**.
 
 Click on the latest successful `Build Cross-Platform Apps` workflow run and scroll down to **Artifacts** to download the `.apk`, `.exe`, `.app`, or Linux bundle!
+
+For linux run
+
+``` bash
+./install.sh
+```
+
 
 ---
 
