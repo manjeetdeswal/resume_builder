@@ -1,7 +1,7 @@
 # 📄 Cross-Platform Resume Builder
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter)](https://flutter.dev/)
-[![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web%20%7C%20Windows%20%7C%20macOS%20%7C%20Linux-brightgreen)](#)
+[![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20Web%20%7C%20Windows%20%7C%20macOS%20%7C%20Linux-brightgreen)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/manjeetdeswal/resume_builder/release.yml?branch=main)](https://github.com/manjeetdeswal/resume_builder/actions)
 
