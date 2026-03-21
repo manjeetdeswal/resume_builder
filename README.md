@@ -1,7 +1,7 @@
 # 📄 Cross-Platform Resume Builder
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter)](https://flutter.dev/)
-[![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web%20%7C%20Windows%20%7C%20macOS%20%7C%20Linux-brightgreen)](#)
+[![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20Web%20%7C%20Windows%20%7C%20macOS%20%7C%20Linux-brightgreen)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/manjeetdeswal/resume_builder/release.yml?branch=main)](https://github.com/manjeetdeswal/resume_builder/actions)
 
@@ -13,11 +13,15 @@ A beautiful, responsive, and fully offline Resume Builder built with Flutter. De
 
 ## 📸 Screenshots
 
-*(Note: Add your screenshots to an `assets` or `docs` folder in your repo and update these paths!)*
+<p align="center">
+  <img src="https://github.com/manjeetdeswal/resume_builder/blob/master/ss/1000046236.png" width="45%" alt="Keyboard" />
+  <img src="https://github.com/manjeetdeswal/resume_builder/blob/master/ss/1000046237.png" width="45%" alt="Display Extension" />
+</p>
+<p align="center">
+  <img src="https://github.com/manjeetdeswal/resume_builder/blob/master/ss/Screenshot%202026-03-21%20124757.png" width="45%" alt="Mic Streaming" />
+    <img src="https://github.com/manjeetdeswal/resume_builder/blob/master/ss/Screenshot%202026-03-21%20124810.png" width="45%" alt="Mic Streaming" />
+</p
 
-| Desktop Editor (Live PDF Preview) | Template Gallery (Dark Mode) | Mobile Experience |
-| :---: | :---: | :---: |
-| <img src="link_to_your_editor_screenshot.png" width="300"/> | <img src="link_to_your_gallery_screenshot.png" width="300"/> | <img src="link_to_your_mobile_screenshot.png" width="300"/> |
 
 ---
 
