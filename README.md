@@ -7,6 +7,15 @@
 
 A beautiful, responsive, and fully offline Resume Builder built with Flutter. Design professional, ATS-friendly resumes on any device—from your phone to your PC.
 
+## ❤️ Support the Creator
+
+If this app helped you land a job, or if you just want to support open-source development, consider buying me a coffee!
+
+<a href="https://www.patreon.com/cw/UnrealComponent">
+  <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Support on Patreon" height="45">
+</a>
+
+
 ✨ **[Try the Live Web Demo Here](https://manjeetdeswal.github.io/resume_builder/)** ✨
 
                               or
@@ -89,13 +98,6 @@ For linux run
 
 ---
 
-## ❤️ Support the Creator
-
-If this app helped you land a job, or if you just want to support open-source development, consider buying me a coffee!
-
-<a href="https://www.patreon.com/cw/UnrealComponent">
-  <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Support on Patreon" height="45">
-</a>
 
 ---
 
