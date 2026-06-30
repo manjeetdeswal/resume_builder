@@ -3,6 +3,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import '../models/resume_data.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 String _getInitials(String name) {
   if (name.isEmpty) return 'U';
@@ -200,29 +201,37 @@ pw.Widget _buildPartitions(
 // 3. THE UNIVERSAL ITEM BUILDERS (Fully Responsive!)
 // ==========================================
 pw.Widget _buildAvatar(
-  ResumeData data,
-  double size, {
-  PdfColor? bgColor,
-  PdfColor? fgColor,
-  double? fontSize,
-}) {
+    ResumeData data,
+    double size, {
+      PdfColor? bgColor,
+      PdfColor? fgColor,
+      double? fontSize,
+    }) {
   if (data.personalInfo.imagePath.isNotEmpty) {
     try {
-      final file = File(data.personalInfo.imagePath);
-      if (file.existsSync())
-        return pw.Container(
-          width: size,
-          height: size,
-          decoration: pw.BoxDecoration(
-            shape: pw.BoxShape.circle,
-            image: pw.DecorationImage(
-              image: pw.MemoryImage(file.readAsBytesSync()),
-              fit: pw.BoxFit.cover,
+      // FIX: Only try to read local files if we are NOT on the web
+      if (!kIsWeb) {
+        final file = File(data.personalInfo.imagePath);
+        if (file.existsSync()) {
+          return pw.Container(
+            width: size,
+            height: size,
+            decoration: pw.BoxDecoration(
+              shape: pw.BoxShape.circle,
+              image: pw.DecorationImage(
+                image: pw.MemoryImage(file.readAsBytesSync()),
+                fit: pw.BoxFit.cover,
+              ),
             ),
-          ),
-        );
-    } catch (_) {}
+          );
+        }
+      }
+    } catch (e) {
+      // Fail silently and fallback to initials
+    }
   }
+
+  // Fallback to initials
   return pw.Container(
     width: size,
     height: size,
