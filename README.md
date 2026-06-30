@@ -7,7 +7,21 @@
 
 A beautiful, responsive, and fully offline Resume Builder built with Flutter. Design professional, ATS-friendly resumes on any device—from your phone to your PC.
 
+## ❤️ Support the Creator
+
+If this app helped you land a job, or if you just want to support open-source development, consider buying me a coffee!
+
+<a href="https://www.patreon.com/cw/UnrealComponent">
+  <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Support on Patreon" height="45">
+</a>
+
+
 ✨ **[Try the Live Web Demo Here](https://manjeetdeswal.github.io/resume_builder/)** ✨
+
+                              or
+
+✨ **[Download the app](https://github.com/manjeetdeswal/resume_builder/releases)** ✨
+
 
 ---
 
@@ -71,19 +85,19 @@ Want to run this project locally or contribute?
 
 ## 📦 Releases & Downloads
 
-Don't want to build it yourself? You can download the latest compiled executables directly from the **[Actions Tab](https://github.com/manjeetdeswal/resume_builder/actions)**.
+Don't want to build it yourself? You can download the latest compiled executables directly from the **[release Tab](https://github.com/manjeetdeswal/resume_builder/releases)**.
 
 Click on the latest successful `Build Cross-Platform Apps` workflow run and scroll down to **Artifacts** to download the `.apk`, `.exe`, `.app`, or Linux bundle!
 
+For linux run
+
+``` bash
+./install.sh
+```
+
+
 ---
 
-## ❤️ Support the Creator
-
-If this app helped you land a job, or if you just want to support open-source development, consider buying me a coffee!
-
-<a href="https://www.patreon.com/cw/UnrealComponent">
-  <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Support on Patreon" height="45">
-</a>
 
 ---
 
